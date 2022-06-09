@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee records</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+
+    </style>
+    <marquee>Welcome to Employee Records  Page</marquee>
+</head>
+<body>
+    <div align="center">
+        <fieldset>
+    <legend align="center"><h1>Welcome employee records</h1></legend>
+<table align="center" border="1px" cellspacing="1" cellpadding="10px">
+    <tr>
+        <td>ID</td>
+        <td>NAME</td>
+        <td>CONTACT</td>
+        <td>EMAIL</td>
+        <td>PASSWORD</td>
+        <td>Action</td>
+    </tr>
+    {%for i in elist%}
+    <tr>
+        <td>{{i[0]}}</td>
+        <td>{{i[1]}}</td>
+        <td>{{i[2]}}</td>
+        <td>{{i[3]}}</td>
+        <td>{{i[4]}}</td>
+        <td><a href="deleteEmp?id={{i[0]}}">Delete</a>  /  <a href="update">Update</a></td>
+        
+
+
+    </tr>
+    {%endfor %}
+ 
+</table>
+<a href="/home">Home page</a>
+</fieldset>
+</div>
+</body>
+</html>
